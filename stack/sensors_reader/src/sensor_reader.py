@@ -9,19 +9,19 @@ def talker():
     GPIO.setmode(GPIO.BOARD) # mode--> pin
       
     #Sensor 1 - bottom:
-    #trig1=33
-    #echo1=11
-    #first=(trig1,echo1)
+    trig1=33
+    echo1=11
+    first=(trig1,echo1)
 
-    #Sensor 2 - back left:
-    trig2=13
-    echo2=15
+    #Sensor 2 - front:
+    trig2=15
+    echo2=32
     second=(trig2,echo2)
 
     #Sensor 3 - back right:
-    trig3=16
-    echo3=18
-    third=(trig3,echo3)
+    #trig3=16
+    #echo3=18
+    #third=(trig3,echo3)
 
     #Sensor 4 - top:
     #trig4= 22
@@ -33,11 +33,11 @@ def talker():
     #fift=(trig5,echo5)
 
     #Sensor 6 - front left:
-    trig6=7
-    echo6=35
-    sixt=(trig6,echo6)
+    #trig6=7
+    #echo6=35
+    #sixt=(trig6,echo6)
 
-    dataset=(second,third,sixt)
+    dataset=(first,second)
 
     pub = rospy.Publisher('distance_from_sensor',Float32MultiArray, queue_size=10)
     rospy.init_node('sensor_reader', anonymous=True)
@@ -54,7 +54,7 @@ def talker():
             
         mes=Float32MultiArray(data=measures)
         print(mes.data)
-        #rospy.loginfo(mes)
+        rospy.loginfo(mes)
         pub.publish(mes)
         rate.sleep()
     GPIO.cleanup()
