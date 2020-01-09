@@ -4,7 +4,7 @@ from std_msgs.msg import Float32MultiArray
 import RPi.GPIO as GPIO
 
 def callback(msg):
-    rospy.loginfo(rospy.get_caller_id() + msg.data)
+    rospy.loginfo(str(msg.data))
 
 def listener():
     rospy.init_node'six_sensors_subscriber', anonymous=True)
