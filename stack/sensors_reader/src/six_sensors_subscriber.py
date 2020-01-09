@@ -7,7 +7,7 @@ def callback(msg):
     rospy.loginfo(rospy.get_caller_id() + msg.data)
 
 def listener():
-    rospy.init_node'sensor_subscriber', anonymous=True)
+    rospy.init_node'six_sensors_subscriber', anonymous=True)
     rospy.Subscriber('distance_from_6_sensors',Float32MultiArray, callback)
 
     rospy.spin()

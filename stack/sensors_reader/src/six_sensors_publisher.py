@@ -65,4 +65,4 @@ if __name__=='__main__':
     try:
         talker()
     except rospy.ROSInterruptException:
-        rospy.loginfo('Measurement stopped by user.')"""
+        rospy.loginfo('Measurement stopped by user.')
