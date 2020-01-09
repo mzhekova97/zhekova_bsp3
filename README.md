@@ -1,2 +1,2 @@
 # zhekova_bsp3
-ROS-five sensors
+This project represents a node of ROS for one or multiple (six) sensors.
